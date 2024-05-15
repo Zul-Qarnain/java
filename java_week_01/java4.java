@@ -1,6 +1,5 @@
 import java.util.Scanner;
-class java4{
-    public static void main(String[] args){
+class java4{public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         int number [] = {0,1,2,3,4,5,6,7,8,9};
         System.out.print("Enter the number of elements you want see form the array: ");

@@ -4,7 +4,7 @@ class Java{
     public static void inputmatrix(int[][] matrix,int r1, int c1){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the element of matrix");
-        for(int i=0;i<r1;i++){
+        for`(int i=0;i<r1;i++){
             for(int j=0;j<c1;j++){
                 matrix[i][j] = input.nextInt();
             }
