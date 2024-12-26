@@ -72,6 +72,13 @@ public class SVGViewer extends JFrame {
         // Add the BookStore button to the content pane
         backgroundPanel.add(bookStoreButton);
 
+        // Create and configure the Welcome text label
+        JLabel welcomeLabel = new JLabel("Welcome");
+        welcomeLabel.setForeground(new Color(50, 50, 50)); // Dark gray color
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        welcomeLabel.setBounds(381, 150, 203, 30); // Position above the username field
+        backgroundPanel.add(welcomeLabel);
+
         // Create and configure the Username text field
         JTextField usernameField = new JTextField("Username") {
             @Override
