@@ -162,6 +162,42 @@ public class SVGViewer extends JFrame {
         backgroundPanel.add(usernameField);
         backgroundPanel.add(passwordField);
 
+        // Create and configure the Login button
+        JButton loginButton = new JButton("Login") {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                // Set the background color
+                g2d.setColor(new Color(52, 152, 219)); // A nice blue color
+                g2d.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);
+
+                super.paintComponent(g);
+            }
+        };
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setFont(new Font("SansSerif", Font.BOLD, 14));
+        loginButton.setOpaque(false);
+        loginButton.setContentAreaFilled(false);
+        loginButton.setBorderPainted(false);
+        loginButton.setFocusPainted(false); // Remove the focus border
+        loginButton.setBounds(381, 287, 203, 35); // Position below the password field
+
+        // Add action listener for the Login button (you can add your login logic here)
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String username = usernameField.getText();
+                String password = new String(passwordField.getPassword());
+                System.out.println("Username: " + username + ", Password: " + password);
+                // Add your authentication logic here
+            }
+        });
+
+        // Add the Login button to the content pane
+        backgroundPanel.add(loginButton);
+
         // Set the size of the JFrame to match the image dimensions
         setSize(backgroundImageIcon.getIconWidth(), backgroundImageIcon.getIconHeight());
     }
